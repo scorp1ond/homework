@@ -1,7 +1,7 @@
 import random
 
 class Cat:
-    def __init__(self):
+    def __init__(self, name):
         self.name = name
         self.alive = True
         self.sleep = 50
@@ -41,21 +41,24 @@ class Cat:
         print(f"{day:=^50}")
         live_cube = random.randint(1, 3)
         if live_cube == 1:
+            print("im walking")
             self.to_walk()
         elif live_cube == 2:
+            print("im sleeping")
             self.to_sleep()
         elif live_cube == 3:
+            print("im eating")
             self.to_eat()
 
         self.end_of_the_day()
         self.is_alive()
 
 name = input("input name")
-
+cat = Cat(name=name)
 for i in range(1, 366):
-    if name.alive == False:
+    if cat.alive == False:
         break
-    name.live(i)
+    cat.live(i)
 
 
 
